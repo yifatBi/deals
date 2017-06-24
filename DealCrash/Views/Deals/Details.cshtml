@@ -1,0 +1,94 @@
+﻿@model DealCrash.Models.Deal
+
+@{
+    ViewBag.Title = "Details";
+    DealCrash.Models.User usr = (DealCrash.Models.User)Session["user"];
+    if ((usr != null) && (!usr.admin) && (Model.UserID != usr.UserID))
+    {
+        usr = null;
+    }
+}
+
+@if (usr == null)
+{
+    @Html.Partial("~/Views/Shared/UnAuth.cshtml")
+}
+else
+{
+    <h2>Details</h2>
+
+    <div>
+        <h4>Deal</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.user.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.image)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.image)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.facebook)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.facebook)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.createdDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.createdDate)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.DealID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

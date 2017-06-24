@@ -1,0 +1,69 @@
+﻿@model DealCrash.Models.User
+
+@{
+    ViewBag.Title = "Stats";
+}
+
+<h2>Stats</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            year
+        </th>
+        <th>
+            users posted count
+        </th>
+        <th>
+            posts count
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.posts)
+    {
+        <tr>
+            <td>
+                @item.year
+            </td>
+            <td>
+                @item.users
+            </td>
+            <td>
+                @item.count
+            </td>
+        </tr>
+    }
+
+</table>
+
+<table class="table">
+    <tr>
+        <th>
+            year
+        </th>
+        <th>
+            users comments count
+        </th>
+        <th>
+            comments count
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.comments)
+    {
+        <tr>
+            <td>
+                @item.year
+            </td>
+            <td>
+                @item.users
+            </td>
+            <td>
+                @item.count
+            </td>
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DealCrash.Models.Deal>
+
+@{
+    ViewBag.Title = "Index";
+    DealCrash.Models.User usr = (DealCrash.Models.User)Session["user"];
+}
+
+@Html.Partial("~/Views/Deals/SearchPartial.cshtml")
+
+<hr />
+@if (Model.Count() == 0)
+{
+    <h3> No Posts found in search. </h3>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <section>
+            <article class="blogPost">
+                <header>
+                    <h2>@Html.DisplayFor(modelItem => item.title)</h2>
+                    <p>Posted on @Html.DisplayFor(modelItem => item.createdDate) by <a href="#">@Html.DisplayFor(modelItem => item.user.email)</a> - <a href="#comments">@item.comments.Count comments</a></p>
+                </header>
+                <div>
+                    @Html.DisplayFor(modelItem => item.text)
+                    <br />
+                    <img src="~/images/@Html.DisplayFor(modelItem => item.image)" alt="dealImg" />
+                    <video controls="controls">
+                        <source src="images/shauli.m4v" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                @if (usr != null)
+                {
+                    if (usr.admin)
+                    {
+                        <div>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.DealID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.DealID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.DealID })
+                        </div>
+                    }
+                }
+
+            </article>
+        </section>
+        <section id="comments">
+            <h3>Comments</h3>
+            @foreach (var comm in item.comments)
+            {
+                <article>
+                    <header>
+                        <a href="#">@comm.user.email</a> on @comm.createdDate
+                    </header>
+                    @comm.text
+                </article>
+            }
+
+            @if (usr != null)
+            {
+                using (Html.BeginForm("CreateComment", "Deals"))
+                {
+
+                    <input type="hidden" name="userId" value="@usr.UserID" />
+                    <input type="hidden" name="dealId" value="@item.DealID" />
+
+                    <div>
+                        New comment: <input type="text" name="text" />
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Post new comment" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <br />
+                }
+            }
+        </section>
+    }
+}
+

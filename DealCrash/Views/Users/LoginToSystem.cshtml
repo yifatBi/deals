@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "LoginToSystem";
+}
+
+
+<div class="container-fluid">
+    <div class="form-inline">
+        @using (Html.BeginForm("Login", "Users"))
+            {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="email">
+                <input type="password" name="password" class="form-control" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-default">Sign in</button>
+            <a href="~/Users/Create" style="font-size:larger"> Not a user, Sign Up now</a>
+        }
+    </div>
+
+</div>

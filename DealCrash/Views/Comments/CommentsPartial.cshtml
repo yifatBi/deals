@@ -1,0 +1,15 @@
+﻿@model IEnumerable<DealCrash.Models.Comment>
+
+@foreach (var item in Model)
+{
+    string commentID = "Comment" + item.CommentID;
+    <article id="@commentID">
+        <header>
+            <a href="@Html.DisplayFor(modelItem => item.user.link)">@Html.DisplayFor(modelItem => item.user.name)</a> on <time>@Html.DisplayFor(modelItem => item.createdDate)</time>
+        </header>
+        <p>
+            @Html.DisplayFor(modelItem => item.text)
+            .
+        </p>
+    </article>
+}

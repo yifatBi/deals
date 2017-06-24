@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "SearchPartial";
+}
+
+@using (Html.BeginForm("Search", "Comments", FormMethod.Get))
+{
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-2">
+                Comment ID :
+            </div>
+            <div class="col-md-10">
+                <input type="number" name="id" min="0" value="0" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-2">
+                Comment Text :
+            </div>
+            <div class="col-md-10">
+                <input type="text" name="text" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-2">
+                Comment Date :
+            </div>
+            <div class="col-md-10">
+                <input type="date" name="date" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

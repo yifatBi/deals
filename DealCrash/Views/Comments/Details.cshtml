@@ -1,0 +1,62 @@
+﻿@model DealCrash.Models.Comment
+
+@{
+    ViewBag.Title = "Details";
+    DealCrash.Models.User usr = (DealCrash.Models.User)Session["user"];
+    if ((usr != null) && (!usr.admin))
+    {
+        usr = null;
+    }
+}
+
+@if (usr == null)
+{
+    @Html.Partial("~/Views/Shared/UnAuth.cshtml")
+}
+else
+{
+    <h2>Details</h2>
+
+    <div>
+        <h4>Comment</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.deal.title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.deal.title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.createdDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.createdDate)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CommentID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

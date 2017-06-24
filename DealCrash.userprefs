@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{7B277454-5F34-487E-B13E-BFC32F39241B}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DealCrash/Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="DealCrash/Controllers/AccountController.cs" Line="1" Column="1" />
+      <File FileName="DealCrash/Controllers/DealsController.cs" Line="9" Column="24" />
+      <File FileName="DealCrash/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="DealCrash/Controllers/ManageController.cs" Line="1" Column="1" />
+      <File FileName="DealCrash/Controllers/UsersController.cs" Line="1" Column="1" />
+      <File FileName="DealCrash/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="DealCrash/Views/Users/Stats.cshtml" Line="1" Column="1" />
+      <File FileName="DealCrash/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DealCrash" expanded="True">
+            <Node name="DealCrash" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.DealCrash PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

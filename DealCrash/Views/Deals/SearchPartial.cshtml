@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.title = "Search";
+}
+
+
+@using (Html.BeginForm("Search", "Deals", FormMethod.Get))
+{
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-2">
+                Deal Text :
+            </div>
+            <div class="col-md-10">
+                <input type="text" name="text" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-2">
+                Deal Date :
+            </div>
+            <div class="col-md-10">
+                <input type="date" name="date" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
